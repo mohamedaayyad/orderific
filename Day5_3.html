@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orderific Service Panel Preview</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #e8f0fa;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .frame {
+            width: 100%;
+            max-width: 600px;
+            background: #f4e4d8;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .logo {
+            width: 130px;
+            height: auto;
+            filter: hue-rotate(30deg) saturate(500%) brightness(80%);
+            margin-bottom: 30px;
+        }
+
+        .service-panel {
+            font-size: 24px;
+            color: #000;
+            font-weight: bold;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .login-form {
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .login-form h2 {
+            font-size: 24px;
+            color: #000;
+            margin-bottom: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .login-form label {
+            display: block;
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        .login-form input[type="text"],
+        .login-form input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: #fff;
+            color: #333;
+        }
+
+        .password-container {
+            position: relative;
+        }
+
+        .password-eye {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: auto;
+            cursor: pointer;
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .remember-me input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        .remember-me label {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .login-with-code {
+            display: block;
+            font-size: 14px;
+            color: #0066cc;
+            margin-bottom: 20px;
+            text-decoration: none;
+            text-align: right;
+        }
+
+        .login-form button {
+            width: 100%;
+            padding: 12px;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .login-form button:hover {
+            background-color: #333;
+        }
+
+        /* Mobile devices (up to 768px) */
+        @media (max-width: 768px) {
+            .frame {
+                padding: 20px;
+                margin: 10px;
+            }
+
+            .logo {
+                width: 100px;
+                margin-bottom: 20px;
+            }
+
+            .service-panel {
+                font-size: 20px;
+                margin-bottom: 30px;
+            }
+
+            .login-form h2 {
+                font-size: 20px;
+            }
+
+            .login-form input[type="text"],
+            .login-form input[type="password"] {
+                padding: 10px;
+                font-size: 14px;
+            }
+
+            .login-form button {
+                padding: 10px;
+                font-size: 16px;
+            }
+        }
+
+        /* Tablets (769px - 1024px) */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .frame {
+                max-width: 500px;
+                padding: 30px;
+            }
+
+            .logo {
+                width: 120px;
+            }
+
+            .service-panel {
+                font-size: 22px;
+            }
+        }
+
+        /* Desktops (1025px and above) */
+        @media (min-width: 1025px) {
+            .frame {
+                max-width: 600px;
+                padding: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="frame">
+            <img src="https://orderific.com/ord-website/assets/img/company-logo/logo-black-2.webp" class="logo" alt="Orderific Logo">
+            <div class="service-panel">Service Panel</div>
+            <div class="login-form">
+                <h2>Welcome Back</h2>
+                <label>Email address</label>
+                <input type="text" value="admin@example.com" readonly>
+
+                <label>Password</label>
+                <div class="password-container">
+                    <input type="password" value="password" readonly>
+                    <img src="https://img.icons8.com/ios-filled/50/000000/visible.png" class="password-eye" alt="Eye Icon">
+                </div>
+
+                <div class="remember-me">
+                    <input type="checkbox" id="remember-me">
+                    <label for="remember-me">Remember me</label>
+                </div>
+
+                <a href="#" class="login-with-code">Login with Code</a>
+                <button type="button">Sign in</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

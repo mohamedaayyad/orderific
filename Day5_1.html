@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orderific Service Panel Preview</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #e8f0fa; /* Slightly more blue-tinted background */
+        }
+
+        .left-section {
+            position: relative;
+            width: 100%;
+            max-width: 400px; /* Matches the screenshot's card-like width */
+            height: 600px; /* Matches the screenshot's height proportion */
+            background: url('https://orderific.com/ord-website/assets/img/cover1.webp') no-repeat center center/cover; /* Delivery person on bike */
+            border-radius: 20px; /* Rounded corners like the screenshot */
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Logo Styling */
+        .logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 100px; /* Adjust size as needed */
+            height: auto;
+            filter: invert(100%) brightness(200%); /* Makes the logo appear white */
+        }
+
+        /* Overlay 1 - Top Left */
+        .overlay-1 {
+            position: absolute;
+            top: 10%;
+            left: 5%;
+            background: rgba(0, 123, 255, 0.9); /* Vibrant blue with transparency */
+            padding: 15px;
+            border-radius: 10px;
+            color: white;
+            width: 40%;
+            max-width: 150px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .overlay-1 h2 {
+            font-size: 18px;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .overlay-1 p {
+            font-size: 12px;
+            line-height: 1.4;
+        }
+
+        /* Overlay 2 - Bottom Center */
+        .overlay-2 {
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.9); /* White with transparency */
+            padding: 20px;
+            border-radius: 10px;
+            color: #333;
+            width: 80%;
+            max-width: 300px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .overlay-2 h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #0066cc; /* Deeper blue for title */
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .overlay-2 p {
+            font-size: 14px;
+            line-height: 1.5;
+            color: #555;
+        }
+
+        /* Responsive Design */
+        @media (min-width: 768px) {
+            .left-section {
+                max-width: 500px;
+                height: 750px;
+            }
+
+            .overlay-1 {
+                font-size: 20px;
+                padding: 20px;
+                max-width: 200px;
+            }
+
+            .overlay-1 h2 {
+                font-size: 22px;
+            }
+
+            .overlay-1 p {
+                font-size: 14px;
+            }
+
+            .overlay-2 {
+                padding: 25px;
+                max-width: 350px;
+            }
+
+            .overlay-2 h2 {
+                font-size: 28px;
+            }
+
+            .overlay-2 p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="left-section">
+        <img src="https://orderific.com/ord-website/assets/img/company-logo/logo-black-2.webp" class="logo" alt="Orderific Logo">
+        <div class="overlay-1">
+            <h2>Swift Delivery Quest</h2>
+            <p>Embark on a journey of lightning-fast deliveries with real-time updates and seamless coordination.</p>
+        </div>
+        <div class="overlay-2">
+            <h2>Operation Hub</h2>
+            <p>Revolutionize your restaurant with our advanced BMS. Effortlessly oversee reservations, orders, inventory, and staff, crafting unforgettable dining adventures.</p>
+        </div>
+    </div>
+</body>
+</html>

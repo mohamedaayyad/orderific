@@ -4,516 +4,515 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Orderific - Free Plan</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+            font-family: Arial, sans-serif;
         }
 
         body {
+            line-height: 1.6;
+            color: #333;
             background-color: #fff;
-            color: #000;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
+        /* Header Section */
         .header {
-            padding: 20px 0;
-            border-bottom: 1px solid #e0e0e0;
-        }
-
-        .header .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 20px 50px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
-        .header .logo img {
-            height: 30px;
-        }
-
-        .header nav ul {
-            list-style: none;
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
             display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 30px;
+            margin-right: 5px;
+        }
+
+        .logo span {
+            color: #f60;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
             gap: 20px;
         }
 
-        .header nav ul li a {
+        .nav-links a {
             text-decoration: none;
-            color: #000;
-            font-size: 16px;
-        }
-
-        .header .actions {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .header .actions img {
-            height: 20px;
-        }
-
-        .header .actions a {
-            text-decoration: none;
-            font-size: 16px;
-        }
-
-        .header .actions .login {
-            color: #000;
-        }
-
-        .header .actions .start-free {
-            background-color: #EF6C00;
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-weight: 600;
-        }
-
-        .main-section {
-            padding: 50px 0;
-        }
-
-        .main-section .container {
-            display: flex;
-            gap: 40px;
-            flex-wrap: wrap;
-            align-items: flex-start;
-        }
-
-        .main-section .content {
-            flex: 2;
-            min-width: 300px;
-            margin-left: 0;
-        }
-
-        .main-section .content h1 {
-            font-size: 48px;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-
-        .main-section .content p {
-            font-size: 16px;
-            line-height: 1.6;
-            margin-bottom: 20px;
             color: #333;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s;
         }
 
-        .main-section .content h3, .main-section .content h4 {
-            font-size: 24px;
-            font-weight: 600;
+        .nav-links a:hover {
+            color: #f60;
+        }
+
+        .nav-links img {
+            width: 23px;
+            margin-left: 10px;
+        }
+
+        .login-btn {
+            padding: 8px 15px;
+            background-color: transparent;
+            border: 1px solid #f60;
+            color: #f60;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .login-btn:hover {
+            background-color: #f60;
+            color: #fff;
+        }
+
+        .start-free-btn {
+            padding: 8px 15px;
+            background-color: #f60;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+
+        .start-free-btn:hover {
+            background-color: #e65c00;
+        }
+
+        /* Main Container */
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+            gap: 40px;
+        }
+
+        .content {
+            flex: 2;
+        }
+
+        .content h1 {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .content h2 {
+            font-size: 18px;
+            font-weight: bold;
             margin-top: 30px;
             margin-bottom: 10px;
         }
 
-        .main-section .pricing-card {
+        /* Sidebar */
+        .sidebar {
             flex: 1;
-            background-color: #fff;
+            background-color: #f9f9f9;
+            padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            padding: 40px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
             text-align: center;
-            min-width: 350px;
-            max-width: 400px;
         }
 
-        .main-section .pricing-card .price-section {
-            margin-bottom: 30px;
-        }
-
-        .main-section .pricing-card img {
-            height: 48px;
-            margin-bottom: 15px;
-        }
-
-        .main-section .pricing-card h4 {
-            font-size: 28px;
-            font-weight: 700;
+        .sidebar img {
+            width: 50px;
             margin-bottom: 10px;
         }
 
-        .main-section .pricing-card .price {
-            font-size: 42px;
-            font-weight: 700;
-            color: #EF6C00;
-            margin-bottom: 15px;
+        .sidebar h2 {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
         }
 
-        .main-section .pricing-card .price-desc {
-            font-size: 16px;
+        .sidebar .price {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin: 5px 0;
+        }
+
+        .sidebar .price span {
+            font-size: 14px;
+            font-weight: normal;
+            color: #666;
+        }
+
+        .sidebar p {
+            font-size: 12px;
             color: #666;
             margin-bottom: 20px;
         }
 
-        .main-section .pricing-card .btn {
-            background-color: #EF6C00;
+        .get-started-btn {
+            padding: 10px 20px;
+            background-color: #f60;
             color: #fff;
-            padding: 14px 0;
-            width: 100%;
+            border: none;
             border-radius: 5px;
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-block;
-            margin-bottom: 25px;
-            font-size: 16px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            width: 100%;
+            transition: background-color 0.3s;
         }
 
-        .main-section .pricing-card ul {
+        .get-started-btn:hover {
+            background-color: #e65c00;
+        }
+
+        .sidebar h3 {
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        .sidebar ul {
             list-style: none;
             text-align: left;
         }
 
-        .main-section .pricing-card ul li {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 14px;
-            margin-bottom: 10px;
-        }
-
-        .main-section .pricing-card ul li img {
-            height: 16px;
-        }
-
-        .footer {
-            padding: 40px 0;
-            border-top: 1px solid #e0e0e0;
-        }
-
-        .footer .container {
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-        }
-
-        .footer .top {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .footer .top .logo img {
-            height: 30px;
-            margin-bottom: 10px;
-        }
-
-        .footer .top p {
+        .sidebar ul li {
             font-size: 14px;
             color: #666;
-            max-width: 400px;
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
         }
 
-        .footer .top .buttons {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
+        .sidebar ul li::before {
+            content: '✔';
+            color: #f60;
+            position: absolute;
+            left: 0;
+            font-size: 16px;
         }
 
-        .footer .top .buttons a {
-            background-color: #EF6C00;
-            color: #fff;
-            padding: 12px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 600;
+        /* Download Buttons */
+        .download-section {
+            margin-top: 30px;
+            text-align: left;
+        }
+
+        .download-section img {
+            width: 30px;
+            margin-right: 5px;
+        }
+
+        .download-section p {
+            font-size: 14px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
             display: flex;
             align-items: center;
-            gap: 5px;
         }
 
-        .footer .links {
+        .download-section p span {
+            color: #f60;
+        }
+
+        .download-btns {
+            display: flex;
+            gap: 10px;
+        }
+
+        .download-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            color: #fff;
+            transition: opacity 0.3s;
+            flex: 1;
+        }
+
+        .ios-btn {
+            background-color: #000;
+        }
+
+        .android-btn {
+            background-color: #a4c639;
+        }
+
+        .download-btn:hover {
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #f9f9f9;
+            padding: 40px 50px;
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
             gap: 20px;
         }
 
-        .footer .links div {
+        .footer-column {
             flex: 1;
-            min-width: 200px;
+            min-width: 150px;
         }
 
-        .footer .links h5 {
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 10px;
+        .footer-column h4 {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 15px;
         }
 
-        .footer .links ul {
+        .footer-column ul {
             list-style: none;
         }
 
-        .footer .links ul li a {
-            font-size: 14px;
-            color: #666;
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
             text-decoration: none;
-            line-height: 2;
+            color: #666;
+            font-size: 12px;
+            transition: color 0.3s;
         }
 
-        .footer .links .menu-list {
+        .footer-column ul li a:hover {
+            color: #f60;
+        }
+
+        .locations {
             display: flex;
+            gap: 20px;
             flex-wrap: wrap;
-            gap: 10px;
         }
 
-        .footer .links .menu-list li {
+        .location-item {
             display: flex;
             align-items: center;
-        }
-
-        .footer .links .menu-list .sub-items {
-            display: flex;
-            gap: 10px;
-            margin-left: 10px;
-        }
-
-        .footer .links .menu-list .sub-items a {
-            font-size: 14px;
+            font-size: 12px;
             color: #666;
+        }
+
+        .location-item img {
+            width: 20px;
+            margin-right: 5px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 10px;
+            background-color: #f9f9f9;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .footer-bottom a {
+            color: #f60;
             text-decoration: none;
         }
 
-        .footer .links ul li a.browse {
-            color: #EF6C00;
+        .footer-bottom a:hover {
             text-decoration: underline;
         }
 
-        .footer .links .cities {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-        }
-
-        .footer .links .cities div {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 14px;
-            color: #666;
-        }
-
-        .footer .links .cities div img {
-            height: 20px;
-        }
-
-        .footer .copyright {
-            text-align: center;
-            font-size: 14px;
-            color: #666;
-        }
-
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .header .container {
-                flex-wrap: wrap;
+            .header {
+                flex-direction: column;
+                padding: 20px;
+                text-align: center;
+            }
+
+            .nav-links {
+                flex-direction: column;
                 gap: 10px;
+                margin-top: 20px;
             }
 
-            .header nav {
-                display: none;
-            }
-
-            .header .actions {
-                flex-wrap: wrap;
-                justify-content: flex-end;
-            }
-
-            .main-section .container {
+            .container {
                 flex-direction: column;
+                margin: 20px;
             }
 
-            .main-section .content h1 {
-                font-size: 36px;
+            .sidebar {
+                margin-top: 20px;
             }
 
-            .main-section .content h3, .main-section .content h4 {
-                font-size: 20px;
-            }
-
-            .footer .top {
+            .footer {
                 flex-direction: column;
-                align-items: flex-start;
+                text-align: center;
+                padding: 20px;
             }
 
-            .footer .top .buttons {
-                justify-content: flex-start;
-            }
-
-            .footer .links {
-                flex-direction: column;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .main-section .content h1 {
-                font-size: 28px;
-            }
-
-            .main-section .content p {
-                font-size: 14px;
-            }
-
-            .main-section .pricing-card h4 {
-                font-size: 24px;
-            }
-
-            .main-section .pricing-card .price {
-                font-size: 32px;
-            }
-
-            .main-section .pricing-card .price-desc {
-                font-size: 14px;
-            }
-
-            .footer .top .buttons a {
-                padding: 10px 15px;
-                font-size: 14px;
+            .locations {
+                justify-content: center;
             }
         }
     </style>
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <div class="logo">
-                <img src="https://orderific.com/ord-website/assets/img/company-logo/logo-black-2.webp" alt="Orderific">
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Features</a></li>
-                    <li><a href="#">Pricing</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="actions">
-                <img src="https://orderific.com/ord-website/assets/img/country-logo.svg" alt="Country Flag">
-                <a href="#" class="login">Login</a>
-                <a href="#" class="start-free">Start for Free</a>
+    <!-- Header -->
+    <div class="header">
+        <div class="logo">
+            <img src="https://img.icons8.com/ios-filled/30/f60/delivery.png" alt="Orderific Logo">
+            Order<span>ific</span>
+        </div>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">Features</a>
+            <a href="#">Pricing</a>
+            <a href="#">About Us</a>
+            <a href="#">Blog</a>
+            <a href="#">Contact</a>
+            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Flag_of_the_United_Kingdom.svg/23px-Flag_of_the_United_Kingdom.svg.png" alt="UK Flag">
+            <button class="login-btn">Login</button>
+            <button class="start-free-btn">START FOR FREE</button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Left Content -->
+        <div class="content">
+            <h1>Free Plan</h1>
+            <p>Feugiat imperdiet pellentesque nibh bibendum lacinia pulvinar justo cursus utricies adipiscing risus porta scelerisque at ipsum.</p>
+            <h2>What’s included in the plan?</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa.</p>
+            <h2>Is this the right plan for my restaurant?</h2>
+            <p>Vitae congue eu consequat ac felis placerat vestibulum lectus mauris ut. Accumsan tortor posuere ac ut consequat semper viverra nam libero justo laoreet sit amet cursus sit amet dictum sit amet justo donec enim diam vulputate ut pharetra sit amet aliquam id diam maecenas ultricies mi eget mauris pharetra et ultrices.</p>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <img src="https://img.icons8.com/ios-filled/50/000000/bicycle.png" alt="Bike Icon">
+            <h2>FREE</h2>
+            <p class="price">$0<span>/mo</span></p>
+            <p>Lorem ipsum dolor sit amet dolor sit amet consectetur elit.</p>
+            <button class="get-started-btn">Get started</button>
+            <h3>What’s included:</h3>
+            <ul>
+                <li>Single Location (30 tables limit)</li>
+                <li>Mobile Order & Pay</li>
+                <li>Split the Bill</li>
+                <li>Delivery & Pickup</li>
+                <li>Limited Customisable Website Builder Basic</li>
+                <li>Kitchen Printer Integration</li>
+                <li>Delivery & Pickup Gratuitous (Tips)</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Download Section -->
+    <div class="download-section" style="max-width: 1200px; margin: 0 auto 50px; padding: 0 20px;">
+        <p><img src="https://img.icons8.com/ios-filled/30/f60/delivery.png" alt="Orderific Logo"> Order<span>ific</span> ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut.</p>
+        <div class="download-btns">
+            <button class="download-btn ios-btn">Download for iOS</button>
+            <button class="download-btn android-btn">Download for Android</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer-column">
+            <h4>Menu</h4>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Blog posts</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h4>Plans</h4>
+            <ul>
+                <li><a href="#">Plan single</a></li>
+                <li><a href="#">Register</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h4>Utility pages</h4>
+            <ul>
+                <li><a href="#">Start here</a></li>
+                <li><a href="#">Styleguide</a></li>
+                <li><a href="#">Password protected</a></li>
+                <li><a href="#">404 Not found</a></li>
+                <li><a href="#">Licenses</a></li>
+                <li><a href="#">Changelog</a></li>
+                <li><a href="#">Browse More Templates</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h4>Available in</h4>
+            <div class="locations">
+                <div class="location-item"><img src="https://img.icons8.com/ios-filled/20/000000/bridge.png" alt="San Francisco"> San Francisco, CA</div>
+                <div class="location-item"><img src="https://img.icons8.com/ios-filled/20/000000/empire-state-building.png" alt="New York"> New York, NY</div>
+                <div class="location-item"><img src="https://img.icons8.com/ios-filled/20/000000/palm-tree.png" alt="Los Angeles"> Los Angeles, CA</div>
+                <div class="location-item"><img src="https://img.icons8.com/ios-filled/20/000000/space-needle.png" alt="Seattle"> Seattle, WA</div>
             </div>
         </div>
-    </header>
+    </div>
 
-    <section class="main-section">
-        <div class="container">
-            <div class="content">
-                <h1>Free Plan</h1>
-                <p>Feugiat imperdiet pellentesque nibh bibendum lacinia pulvinar justo cursus ultricies adipiscing risus porta scelerisque at ipsum.</p>
-                <h3>What's included in the plan?</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit lobortis arcu enim urna adipiscing praesent velit viverra sit semper lorem eu cursus vel hendrerit elementum morbi curabitur etiam nibh justo lorem aliquet donec sed sit mi dignissim at ante massa mattis.</p>
-                <h4>Is this the right plan for my restaurant?</h4>
-                <p>Vitae congue eu consequat ac felis placerat vestibulum lectus mauris ultrices cursus sit amet dictum sit amet justo donec enim diam porttitor lacus luctus accumsan tortor posuere praesent tristique magna sit amet purus gravida quis turpis.</p>
-            </div>
-            <div class="pricing-card">
-                <div class="price-section">
-                    <img src="https://orderific.com/ord-website/assets/img/pricing/logo/icon5.png" alt="Icon">
-                    <h4>FREE</h4>
-                    <div class="price">$0/mo</div>
-                    <p class="price-desc">Lorem ipsum dolor sit amet dolor adipiscing elit sit consectetur elit.</p>
-                </div>
-                <a href="#" class="btn">Get started</a>
-                <p><b>What's included:</b></p>
-                <ul>
-                    <li><img src="https://orderific.com/ord-website/assets/img/Check.svg" alt="Check"> Single Location (30 tables limit)</li>
-                    <li><img src="https://orderific.com/ord-website/assets/img/Check.svg" alt="Check"> Mobile Order & Pay</li>
-                    <li><img src="https://orderific.com/ord-website/assets/img/Check.svg" alt="Check"> Split the Bill</li>
-                    <li><img src="https://orderific.com/ord-website/assets/img/Check.svg" alt="Check"> Delivery & Pickup</li>
-                    <li><img src="https://orderific.com/ord-website/assets/img/Check.svg" alt="Check"> Limited Customizable</li>
-                    <li><img src="https://orderific.com/ord-website/assets/img/Check.svg" alt="Check"> Website Builder Basic</li>
-                    <li><img src="https://orderific.com/ord-website/assets/img/Check.svg" alt="Check"> Kitchen Printer Integration</li>
-                    <li><img src="https://orderific.com/ord-website/assets/img/Check.svg" alt="Check"> Delivery & Pickup</li>
-                    <li><img src="https://orderific.com/ord-website/assets/img/Check.svg" alt="Check"> Gratuities (Tips)</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+    <div class="footer-bottom">
+        Copyright © Delivery X | Designed by <a href="#">BRIX Templates</a> - Powered by <a href="#">Webflow</a>
+    </div>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="top">
-                <div class="logo">
-                    <img src="https://orderific.com/ord-website/assets/img/company-logo/logo-black-2.webp" alt="Orderific">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut.</p>
-                </div>
-                <div class="buttons">
-                    <a href="#"><i class="fab fa-apple"></i> Download for iOS</a>
-                    <a href="#"><i class="fab fa-android"></i> Download for Android</a>
-                </div>
-            </div>
-            <div class="links">
-                <div>
-                    <h5>Menu</h5>
-                    <ul class="menu-list">
-                        <li><a href="#">Home</a></li>
-                        <li>
-                            <a href="#">About</a>
-                            <span class="sub-items">
-                                <a href="#">Plan single</a>
-                            </span>
-                        </li>
-                        <li>
-                            <a href="#">Contact</a>
-                            <span class="sub-items">
-                                <a href="#">Register</a>
-                            </span>
-                        </li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Blog posts</a></li>
-                        <li><a href="#">Plans</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h5>Utility pages</h5>
-                    <ul>
-                        <li><a href="#">Start here</a></li>
-                        <li><a href="#">Styleguide</a></li>
-                        <li><a href="#">Password protected</a></li>
-                        <li><a href="#">404 Not found</a></li>
-                        <li><a href="#">Licenses</a></li>
-                        <li><a href="#">Changelog</a></li>
-                        <li><a href="#" class="browse">Browse More Templates</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h5>Available in</h5>
-                    <div class="cities">
-                        <div>
-                            <img src="https://orderific.com/ord-website/assets/img/footer-icons/icon1.png" alt="San Francisco">
-                            <span>San Francisco, CA</span>
-                        </div>
-                        <div>
-                            <img src="https://orderific.com/ord-website/assets/img/footer-icons/icon3.png" alt="Los Angeles">
-                            <span>Los Angeles, CA</span>
-                        </div>
-                        <div>
-                            <img src="https://orderific.com/ord-website/assets/img/footer-icons/icon2.png" alt="New York">
-                            <span>New York, NY</span>
-                        </div>
-                        <div>
-                            <img src="https://orderific.com/ord-website/assets/img/footer-icons/icon4.png" alt="Seattle">
-                            <span>Seattle, WA</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="copyright">
-                Copyright © Delivery X | Designed by BRIX Templates - Powered by Webflow
-            </div>
-        </div>
-    </footer>
+    <!-- JavaScript -->
+    <script>
+        // Add interactivity to buttons
+        const startFreeBtn = document.querySelector('.start-free-btn');
+        const getStartedBtn = document.querySelector('.get-started-btn');
+        const downloadBtns = document.querySelectorAll('.download-btn');
 
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+        startFreeBtn.addEventListener('click', () => {
+            alert('Starting for free with Orderific!');
+        });
+
+        getStartedBtn.addEventListener('click', () => {
+            alert('Getting started with the Free Plan!');
+        });
+
+        downloadBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const platform = e.target.classList.contains('ios-btn') ? 'iOS' : 'Android';
+                alert(`Downloading Orderific for ${platform}!`);
+            });
+        });
+    </script>
 </body>
 </html>

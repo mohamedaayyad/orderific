@@ -43,7 +43,7 @@
         display: flex;
         height: 834px;
         align-items: center;
-        justify-content: center; /* Changed from flex-end to center */
+        justify-content: center;
         gap: 10px;
         position: relative;
         width: 100%;
@@ -62,6 +62,7 @@
         border-radius: var(--radius-round-6);
         overflow: hidden;
         background-image: url(Introduction@3x.png);
+        background-size: cover;
         background-position: 50% 50%;
       }
 
@@ -92,9 +93,9 @@
 
       .frame .logo {
         position: relative;
-        width: 168px;
-        height: 58.86px;
-        margin-top: -460px;
+        width: 200px;
+        height: 70px;
+        margin-top: -400px;
       }
 
       .frame .content {
@@ -145,18 +146,19 @@
     </style>
   </head>
   <body>
-<div class="frame">
-  <div class="introduction">
-    <div class="BG"></div>
-    <div class="div"></div>
-    <img class="logo" src="Type4.png" style="width: 200px; height: 70px; margin-top: -400px;" />
-    <div class="content">
-      <div class="big-title">Service Panel</div>
-      <p class="description">
-        Streamline your restaurant operations with BMS. Manage reservations, orders, inventory, and staff
-        effortlessly, and focus on delivering exceptional dining experiences.
-      </p>
+    <div class="frame">
+      <div class="introduction">
+        <div class="BG"></div>
+        <div class="div"></div>
+        <img class="logo" src="Type4.png" alt="Orderific Logo" />
+        <div class="content">
+          <div class="big-title">Service Panel</div>
+          <p class="description">
+            Streamline your restaurant operations with BMS. Manage reservations, orders, inventory, and staff
+            effortlessly, and focus on delivering exceptional dining experiences.
+          </p>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-  
+  </body>
+</html>

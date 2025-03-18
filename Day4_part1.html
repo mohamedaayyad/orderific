@@ -13,12 +13,12 @@
         }
 
         body {
-            background: linear-gradient(to right, #ffeeeb, #ffd9d3);
+            background: linear-gradient(to right, #f2e6e3, #e0d2cf);
+            height: 60px; /* Approximate height of the header */
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            min-height: 100vh;
-            padding: 10px; /* Reduced padding for mobile */
+            padding: 0 20px;        
         }
 
         .header {
@@ -40,9 +40,9 @@
         }
 
         .header .time {
-            font-size: 1.2em;
-            color: #000000;
-            font-weight: 600; /* Added weight for clarity */
+            color: #000000; /* Black color for time */
+            font-family: Arial, sans-serif; /* Approximate font */
+            font-size: 20px; /* Approximate size */        
         }
 
         .order-status {
@@ -77,7 +77,7 @@
         .preparing .order-grid,
         .ready .order-grid {
             background-color: #ffffff;
-            padding: 200px;
+            padding: 150px;
             border-radius: 15px;
         }
 
@@ -89,35 +89,50 @@
         }
 
         .preparing .order-grid {
-            grid-template-columns: repeat(6, 1fr); /* Default to 2 columns on mobile */
-            grid-template-rows: repeat(3, auto); /* Adjusted rows for 5 items */
+            grid-template-columns: repeat(3, 1fr); /* Default to 2 columns on mobile */
+            grid-template-rows: repeat(6, auto); /* Adjusted rows for 5 items */
         }
 
         .ready .order-grid {
-            grid-template-columns: repeat(3, 1fr); /* Default to 2 columns on mobile */
-            grid-template-rows: repeat(5, auto); /* Adjusted rows for 3 items */
+            grid-template-columns: repeat(5, 1fr); /* Default to 2 columns on mobile */
+            grid-template-rows: repeat(3, auto); /* Adjusted rows for 3 items */
         }
 
         .order-item {
-            background-color: #e5e5e5;
-            padding: 12px; /* Increased padding for touch targets */
-            border-radius: 5px;
-            font-size: 1em;
-            color: #000000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 50px; /* Minimum height for touch targets */
+            background-color: #f0f0f0; /* Light gray background for Preparing section */
+            padding: 10px;
+            border: 1px solid #ddd;
+            display: inline-block;
+            width: 60%;
+            vertical-align: top;        
         }
 
         .ready .order-item {
-            background-color: #119717;
-            color: #ffffff;
+            background-color: #4caf50; /* Green background for Ready section */
+            padding: 10px;
+            border: 1px solid #ddd;
+            display: inline-block;
+            width: 35%;
+            vertical-align: top;
+            color: #ffffff; /* White text for Ready section */        
         }
-
-        /* Hide extra grid cells if fewer items */
-        .preparing .order-grid div:empty,
-        .ready .order-grid div:empty {
+        .order-number {
+            font-family: Arial, sans-serif; /* Approximate font */
+            font-size: 18px; /* Approximate size */
+            display: inline-block;
+            width: 60px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            margin: 5px;
+            background-color: #ffffff; /* White background for Preparing numbers */
+}
+        .ready .order-number {
+            background-color: #ffffff; /* White background for Ready numbers */
+            color: #000000; /* Black text for Ready numbers */
+            /* Hide extra grid cells if fewer items */
+           .preparing .order-grid div:empty,
+           .ready .order-grid div:empty {
             display: none;
         }
 

@@ -74,7 +74,7 @@
         left: 0;
         background-color: var(--colors-background-brand-orange-100);
         opacity: 0.5;
-        z-index: 1; /* Ensure BG is behind the logo */
+        z-index: 1; /* Behind logo and content */
       }
 
       .frame .div {
@@ -90,36 +90,35 @@
           rgba(0, 0, 0, 1) 100%
         );
         opacity: 0.5;
-        z-index: 1; /* Ensure div is behind the logo */
+        z-index: 1; /* Behind logo and content */
+      }
+
+      .frame .header {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        position: relative;
+        z-index: 2; /* Above background */
       }
 
       .frame .logo {
-        position: absolute;
         width: 200px;
         height: 70px;
-        top: 20px; /* Position logo near the top above the background */
-        left: 140px; /* Center it horizontally within the 480px width */
-        z-index: 2; /* Ensure logo is above BG and div */
+        margin-right: 20px; /* Space between logo and content */
       }
 
       .frame .content {
         display: flex;
         flex-direction: column;
-        height: 160px;
-        align-items: center;
+        align-items: flex-start; /* Align text to the left */
         gap: 24px;
         position: relative;
-        align-self: stretch;
         width: 100%;
-        margin-top: -460px;
-        z-index: 2; /* Ensure content is above background */
+        z-index: 2; /* Above background */
       }
 
       .frame .big-title {
         position: relative;
-        flex: 1;
-        align-self: stretch;
-        margin-top: -1.00px;
         font-family: "DM Sans-Bold", Helvetica;
         font-weight: 700;
         color: var(--colors-text-white-100);
@@ -131,7 +130,6 @@
 
       .frame .description {
         position: relative;
-        align-self: stretch;
         font-family: var(--body-normal-font-family);
         font-weight: var(--body-normal-font-weight);
         color: var(--colors-text-white-100);
@@ -155,13 +153,15 @@
       <div class="introduction">
         <div class="BG"></div>
         <div class="div"></div>
-        <img class="logo" src="Type4.png" alt="Orderific Logo" />
-        <div class="content">
-          <div class="big-title">Service Panel</div>
-          <p class="description">
-            Streamline your restaurant operations with BMS. Manage reservations, orders, inventory, and staff
-            effortlessly, and focus on delivering exceptional dining experiences.
-          </p>
+        <div class="header">
+          <img class="logo" src="Type4.png" alt="Orderific Logo" />
+          <div class="content">
+            <div class="big-title">Service Panel</div>
+            <p class="description">
+              Streamline your restaurant operations with BMS. Manage reservations, orders, inventory, and staff
+              effortlessly, and focus on delivering exceptional dining experiences.
+            </p>
+          </div>
         </div>
       </div>
     </div>

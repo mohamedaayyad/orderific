@@ -56,7 +56,6 @@
         width: 480px;
         height: 802px;
         align-items: flex-start;
-        justify-content: space-between;
         padding: var(--spacing-spacing-8);
         position: relative;
         border-radius: var(--radius-round-6);
@@ -74,7 +73,7 @@
         left: 0;
         background-color: var(--colors-background-brand-orange-100);
         opacity: 0.5;
-        z-index: 1; /* Behind logo and content */
+        z-index: 1; /* Behind other elements */
       }
 
       .frame .div {
@@ -90,30 +89,26 @@
           rgba(0, 0, 0, 1) 100%
         );
         opacity: 0.5;
-        z-index: 1; /* Behind logo and content */
-      }
-
-      .frame .header {
-        display: flex;
-        align-items: center;
-        width: 100%;
-        position: relative;
-        z-index: 2; /* Above background */
+        z-index: 1; /* Behind other elements */
       }
 
       .frame .logo {
         width: 200px;
         height: 70px;
-        margin-right: 20px; /* Space between logo and content */
+        position: relative;
+        z-index: 2; /* Above background */
       }
 
       .frame .content {
         display: flex;
         flex-direction: column;
-        align-items: flex-start; /* Align text to the left */
+        align-items: center; /* Center the title and description */
         gap: 24px;
-        position: relative;
-        width: 100%;
+        position: absolute; /* Position at the bottom */
+        bottom: 40px; /* Align with padding */
+        left: 0;
+        right: 0;
+        padding: 0 var(--spacing-spacing-8);
         z-index: 2; /* Above background */
       }
 
@@ -126,6 +121,7 @@
         letter-spacing: -1.92px;
         line-height: 56px;
         white-space: nowrap;
+        text-align: center;
       }
 
       .frame .description {
@@ -137,6 +133,7 @@
         letter-spacing: var(--body-normal-letter-spacing);
         line-height: var(--body-normal-line-height);
         font-style: var(--body-normal-font-style);
+        text-align: center;
       }
 
       [data-colors-mode="dark-mode"] {
@@ -153,15 +150,13 @@
       <div class="introduction">
         <div class="BG"></div>
         <div class="div"></div>
-        <div class="header">
-          <img class="logo" src="Type4.png" alt="Orderific Logo" />
-          <div class="content">
-            <div class="big-title">Service Panel</div>
-            <p class="description">
-              Streamline your restaurant operations with BMS. Manage reservations, orders, inventory, and staff
-              effortlessly, and focus on delivering exceptional dining experiences.
-            </p>
-          </div>
+        <img class="logo" src="Type4.png" alt="Orderific Logo" />
+        <div class="content">
+          <div class="big-title">Service Panel</div>
+          <p class="description">
+            Streamline your restaurant operations with BMS. Manage reservations, orders, inventory, and staff
+            effortlessly, and focus on delivering exceptional dining experiences.
+          </p>
         </div>
       </div>
     </div>

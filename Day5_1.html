@@ -95,20 +95,23 @@
       .frame .logo {
         width: 200px;
         height: 70px;
-        position: relative;
+        position: absolute;
+        left: 0; /* Start from the left edge */
+        top: 40px; /* Align with padding */
         z-index: 2; /* Above background */
+        margin-left: -40px; /* Move two steps left (40px total, assuming 20px per step) */
       }
 
       .frame .content {
         display: flex;
         flex-direction: column;
-        align-items: center; /* Center the title and description */
+        align-items: flex-start; /* Align content to the left */
         gap: 24px;
         position: absolute; /* Position at the bottom */
         bottom: 40px; /* Align with padding */
-        left: 0;
+        left: var(--spacing-spacing-8); /* Left-aligned with padding */
         right: 0;
-        padding: 0 var(--spacing-spacing-8);
+        padding: 0;
         z-index: 2; /* Above background */
       }
 
@@ -121,7 +124,7 @@
         letter-spacing: -1.92px;
         line-height: 56px;
         white-space: nowrap;
-        text-align: center;
+        text-align: left;
       }
 
       .frame .description {
@@ -133,7 +136,7 @@
         letter-spacing: var(--body-normal-letter-spacing);
         line-height: var(--body-normal-line-height);
         font-style: var(--body-normal-font-style);
-        text-align: center;
+        text-align: left; /* Align description to the left */
       }
 
       [data-colors-mode="dark-mode"] {

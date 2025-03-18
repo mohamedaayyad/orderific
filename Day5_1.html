@@ -74,6 +74,7 @@
         left: 0;
         background-color: var(--colors-background-brand-orange-100);
         opacity: 0.5;
+        z-index: 1; /* Ensure BG is behind the logo */
       }
 
       .frame .div {
@@ -89,13 +90,16 @@
           rgba(0, 0, 0, 1) 100%
         );
         opacity: 0.5;
+        z-index: 1; /* Ensure div is behind the logo */
       }
 
       .frame .logo {
-        position: relative;
+        position: absolute;
         width: 200px;
         height: 70px;
-        margin-top: -400px;
+        top: 20px; /* Position logo near the top above the background */
+        left: 140px; /* Center it horizontally within the 480px width */
+        z-index: 2; /* Ensure logo is above BG and div */
       }
 
       .frame .content {
@@ -108,6 +112,7 @@
         align-self: stretch;
         width: 100%;
         margin-top: -460px;
+        z-index: 2; /* Ensure content is above background */
       }
 
       .frame .big-title {

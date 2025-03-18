@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
       @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
       * {
@@ -13,7 +14,6 @@
         margin: 0px;
         height: 100%;
       }
-      /* a blue color as a generic focus style */
       button:focus-visible {
         outline: 2px solid #4a90e2 !important;
         outline: -webkit-focus-ring-color auto 5px !important;
@@ -48,19 +48,23 @@
         --radius-round-3: 16px;
       }
       .component {
-        width: 1194px;
-        height: 834px;
+        width: 100%;
+        max-width: 1194px;
+        min-height: 834px;
+        margin: 0 auto;
       }
 
       .component .overlap-group {
         position: relative;
-        height: 834px;
+        min-height: 834px;
+        height: 100%;
       }
 
       .component .background-of-body {
         display: flex;
-        width: 1194px;
-        height: 834px;
+        width: 100%;
+        min-height: 834px;
+        height: 100%;
         align-items: center;
         position: absolute;
         top: 0;
@@ -95,7 +99,7 @@
 
       .component .profile-widget {
         display: flex;
-        width: 1162px;
+        width: calc(100% - 32px);
         height: 92px;
         align-items: center;
         justify-content: space-between;
@@ -158,26 +162,26 @@
 
       .component .div {
         display: flex;
-        width: 1194px;
-        height: 694px;
+        width: 100%;
+        min-height: 694px;
         align-items: flex-start;
         gap: var(--spacing-spacing-4);
-        padding: 0px var(--spacing-spacing-4) 0px var(--spacing-spacing-4);
+        padding: 0px var(--spacing-spacing-4);
         position: absolute;
         top: 124px;
         left: 0;
+        flex-direction: column;
       }
 
       .component .frame-2 {
         display: flex;
         flex-direction: column;
-        height: 694px;
+        min-height: 694px;
         align-items: center;
         gap: var(--spacing-spacing-6);
         padding: var(--spacing-spacing-6);
         position: relative;
-        flex: 1;
-        flex-grow: 1;
+        width: 100%;
         background-color: var(--colors-background-white-100);
         border-radius: 24px;
         overflow: hidden;
@@ -203,7 +207,6 @@
         justify-content: center;
         gap: var(--spacing-spacing-2);
         position: relative;
-        align-self: stretch;
         width: 100%;
         flex: 0 0 auto;
       }
@@ -215,7 +218,7 @@
         align-items: center;
         justify-content: center;
         gap: 8px;
-        padding: 8px var(--spacing-spacing-6) 8px var(--spacing-spacing-6);
+        padding: 8px var(--spacing-spacing-6);
         position: relative;
         background-color: var(--colors-background-black-10);
         border-radius: var(--radius-round-3);
@@ -253,8 +256,8 @@
       .component .frame-4 {
         display: flex;
         flex-direction: column;
-        width: 383px;
-        height: 694px;
+        width: 100%;
+        min-height: 694px;
         align-items: center;
         gap: var(--spacing-spacing-6);
         padding: var(--spacing-spacing-6);
@@ -284,19 +287,18 @@
         align-items: flex-start;
         gap: 8px 8px;
         position: relative;
-        align-self: stretch;
         width: 100%;
         flex: 0 0 auto;
       }
 
       .component .div-wrapper {
-        width: 335px;
+        width: 100%;
         height: 128px;
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 8px;
-        padding: 8px var(--spacing-spacing-6) 8px var(--spacing-spacing-6);
+        padding: 8px var(--spacing-spacing-6);
         position: relative;
         background-color: var(--colors-background-status-accepted);
         border-radius: var(--radius-round-3);
@@ -321,7 +323,7 @@
         align-items: center;
         justify-content: center;
         gap: 8px;
-        padding: 8px var(--spacing-spacing-6) 8px var(--spacing-spacing-6);
+        padding: 8px var(--spacing-spacing-6);
         position: relative;
         background-color: var(--colors-background-status-accepted);
         border-radius: var(--radius-round-3);
@@ -354,6 +356,97 @@
         font-weight: 700;
         color: var(--colors-text-white-100);
         white-space: nowrap;
+      }
+
+      @media (max-width: 768px) {
+        .component .profile-widget {
+          flex-direction: column;
+          height: auto;
+          padding: 12px;
+          gap: 8px;
+        }
+
+        .component .frame {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .component .image {
+          width: 48px;
+          height: 48px;
+        }
+
+        .component .mcdonald-s {
+          font-size: 18px;
+        }
+
+        .component .text-wrapper {
+          font-size: 24px;
+        }
+
+        .component .div {
+          top: 140px;
+          padding: 0 8px;
+        }
+
+        .component .frame-2,
+        .component .frame-4 {
+          border-radius: 16px;
+          padding: 16px;
+        }
+
+        .component .text-wrapper-2,
+        .component .text-wrapper-5 {
+          font-size: 24px;
+          line-height: 32px;
+        }
+
+        .component .order-num,
+        .component .order-num-2 {
+          width: 90px;
+          height: 56px;
+        }
+
+        .component .text-wrapper-3,
+        .component .text-wrapper-4,
+        .component .text-wrapper-7,
+        .component .text-wrapper-8 {
+          font-size: 20px;
+        }
+
+        .component .text-wrapper-6 {
+          font-size: 24px;
+        }
+
+        .component .colorful,
+        .component .gray {
+          width: 100%;
+          transform: scale(0.8);
+        }
+      }
+
+      @media (max-width: 480px) {
+        .component .profile-widget {
+          top: 8px;
+          left: 8px;
+          width: calc(100% - 16px);
+        }
+
+        .component .div {
+          top: 120px;
+        }
+
+        .component .order-num,
+        .component .order-num-2 {
+          width: calc(50% - 4px);
+          margin: 0 auto;
+        }
+
+        .component .frame-3,
+        .component .frame-5 {
+          gap: 8px;
+          justify-content: space-between;
+        }
       }
     </style>
   </head>
